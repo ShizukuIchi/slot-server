@@ -1,5 +1,6 @@
 from flask import Flask, request
 import json
+import os
 app = Flask(__name__)
 import pandas as pd
 import numpy as np
@@ -123,4 +124,5 @@ def getRestaurants():
   return response_str
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=True, host="0.0.0.0")
+  port = int(os.environ.get('PORT', 5000))
+  app.run(debug=True, use_reloader=True, host="0.0.0.0", port=port)
