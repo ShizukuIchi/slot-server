@@ -105,7 +105,7 @@ def RestaurantFilter(MRTstation, AverageCost, CostOption1, CostOption2, Rating, 
   return AllResInfo_dict
 @app.route('/')
 def index():
-  return "Please anal me"
+  return "Welcome to slot server!"
 @app.route('/getRestaurants')
 def getRestaurants():
 
