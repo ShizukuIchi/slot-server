@@ -121,3 +121,5 @@ def getRestaurants():
   response_str = json.dumps(response)
 
   return response_str
+
+app.run(host="0.0.0.0")
