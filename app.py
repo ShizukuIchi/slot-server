@@ -1,7 +1,11 @@
-from flask import Flask, request
+from flask import Flask, request, jsonify
+from flask_cors import CORS, cross_origin
 import json
 import os
 app = Flask(__name__)
+CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
+
 import pandas as pd
 import numpy as np
 import shutil
@@ -106,7 +110,9 @@ def RestaurantFilter(MRTstation, AverageCost, CostOption1, CostOption2, Rating, 
 @app.route('/')
 def index():
   return "Welcome to slot server!"
+
 @app.route('/getRestaurants')
+@cross_origin()
 def getRestaurants():
 
   MRTstation = request.args.get('region')
@@ -119,9 +125,8 @@ def getRestaurants():
   Category = request.args.get('category')
 
   response = RestaurantFilter(MRTstation, AverageCost, CostOption1, CostOption2, Rating, RatingOption1, Category)
-  response_str = json.dumps(response)
 
-  return response_str
+  return jsonify(response)
 
 if __name__ == '__main__':
   port = int(os.environ.get('PORT', 5000))
