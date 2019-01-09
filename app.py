@@ -78,11 +78,11 @@ def RestaurantFilter(MRTstation, AverageCost, CostOption1, CostOption2, Rating, 
     d["name"] = i[1]
     d["tel"] = i[2]
     d["nearMRT"] = i[4]
-    d["BigCategory"] = i[5]
-    d["SmallCategory"] = i[6]
-    d["Rating"] = i[7]
-    d["Adress"] = i[9]
-    d["Cost"] = i[10]
+    d["bigcategory"] = i[5]
+    d["smallcategory"] = i[6]
+    d["rating"] = i[7]
+    d["adress"] = i[9]
+    d["cost"] = i[10]
     if i[12] == '無周一營業時間資料':
       d["bsMo"] = ''
     else:
@@ -111,9 +111,9 @@ def RestaurantFilter(MRTstation, AverageCost, CostOption1, CostOption2, Rating, 
       d["bsSu"] = ''
     else:
       d["bsSu"] = i[18]
-    d["OpenTime"] = i[19]
-    d["Recommend"] = i[20]
-    d["Quote"] = i[21]
+    d["opentime"] = i[19]
+    d["recommend"] = i[20]
+    d["quote"] = i[21]
     d["images"] = i[27].split(',')
     AllResInfo_dict.append(d)
   return AllResInfo_dict
