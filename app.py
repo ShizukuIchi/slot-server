@@ -81,7 +81,7 @@ def RestaurantFilter(MRTstation, AverageCost, CostOption1, CostOption2, Rating, 
     d["bigCategory"] = i[5]
     d["smallCategory"] = i[6]
     d["rating"] = i[7]
-    d["adress"] = i[9]
+    d["address"] = i[9]
     d["cost"] = i[10]
     if i[12] == '無周一營業時間資料':
       d["bsMo"] = ''
