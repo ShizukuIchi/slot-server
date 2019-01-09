@@ -43,6 +43,14 @@ def FilterContent(MRTstation, AverageCost, CostOption1, CostOption2, Rating, Rat
   #Filter Category
   if Category == '都可以':
     dCA = dR
+  elif Category[0:2] == 'bu':
+    dCA = dR[(dR['餐廳類型粗分'] == 'buffet自助餐')]
+  elif Category[0:2] == '冰品':
+    dCA = dR[(dR['餐廳類型粗分'] == '冰品、飲料、甜湯')]
+  elif Category[0:2] == '烘焙':
+    dCA = dR[(dR['餐廳類型粗分'] == '烘焙、甜點、零食')]
+  elif Category[0:2] == '咖啡':
+    dCA = dR[(dR['餐廳類型粗分'] == '咖啡、簡餐、茶')]
   else:
     dCA = dR[(dR['餐廳類型粗分'] == Category)]
   
