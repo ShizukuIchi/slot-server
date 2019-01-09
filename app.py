@@ -78,8 +78,8 @@ def RestaurantFilter(MRTstation, AverageCost, CostOption1, CostOption2, Rating, 
     d["name"] = i[1]
     d["tel"] = i[2]
     d["nearMRT"] = i[4]
-    d["bigcategory"] = i[5]
-    d["smallcategory"] = i[6]
+    d["bigCategory"] = i[5]
+    d["smallCategory"] = i[6]
     d["rating"] = i[7]
     d["adress"] = i[9]
     d["cost"] = i[10]
@@ -111,7 +111,7 @@ def RestaurantFilter(MRTstation, AverageCost, CostOption1, CostOption2, Rating, 
       d["bsSu"] = ''
     else:
       d["bsSu"] = i[18]
-    d["opentime"] = i[19]
+    d["openTime"] = i[19]
     d["recommend"] = i[20]
     d["quote"] = i[21]
     d["images"] = i[27].split(',')
