@@ -114,7 +114,11 @@ def RestaurantFilter(MRTstation, AverageCost, CostOption1, CostOption2, Rating, 
     d["openTime"] = i[19]
     d["recommend"] = i[20]
     d["quote"] = i[21]
-    d["images"] = i[27].split(',')
+    piclist = []
+    for num in range(22,27):
+      if i[num][0:4] == 'http':
+        piclist.append(i[num])
+    d["images"] = piclist
     AllResInfo_dict.append(d)
   return AllResInfo_dict
 @app.route('/')
@@ -126,7 +130,7 @@ def index():
 def getRestaurants():
 
   MRTstation = request.args.get('region')
-  AverageCost = int(request.args.get('price'))
+  AverageCost = float(request.args.get('price'))
   CostOption1 = request.args.get('costoption1')
   CostOption2 = request.args.get('costoption2')
   Rating = float(request.args.get('rating'))
