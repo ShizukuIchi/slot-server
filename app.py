@@ -19,6 +19,8 @@ def FilterContent(MRTstation, AverageCost, CostOption1, CostOption2, Rating, Rat
   #Filter MRTstation
   if MRTstation == '都可以':
     dM = df
+  elif MRTstation == '台北 101世貿站':
+    dM = df[(df['鄰近捷運站'] == '台北101世貿站')]
   else:
     dM = df[(df['鄰近捷運站'] == MRTstation)]
   
